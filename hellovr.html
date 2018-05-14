@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello VR</title>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="js/hellovr.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="pokemon" src="/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="pokegirl" src="/models/pokegirl.gltf"></a-asset-item>
+            <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
+        </a-assets>
+        <a-camera>
+            <a-cursor>
+                <!-- <a-sphere position="-0.5 -0.5 -2" radius="0.3" color="#666666"></a-sphere> -->
+            </a-cursor>
+        </a-camera>
+
+        <a-text id="hello" value="Welcome to the Pokemon World!" color="black" height="2" position="-1.5 0.8 -5" opacity="0"></a-text>
+        <a-entity id="girl" gltf-model="#pokemon" position="0 -2 -5"></a-entity>
+        <a-entity scale=".03 .03 .03" gltf-model="#pokegirl" position="-2 -2.2 -5"></a-entity>
+        <a-box src="#boxTexture" color="red" position="-2 4 -8">
+            <a-animation attribute="position" to="2 2.2 -5" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+        </a-box>
+
+        <a-sphere id="bol" color="pink" position="-5 2 -4" radion="0.5"></a-sphere>
+        <a-cylinder position="1 4 -5" color="yellow" radius="1"></a-cylinder>
+        <a-sky color="#ECECEC"></a-sky>
+        <a-plane width="2" height="2" color="green" position="0 -2 0" rotation="-90 0 0"></a-plane>
+    </a-scene>
+</body>
+</html>
