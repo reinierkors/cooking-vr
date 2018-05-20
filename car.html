@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car</title>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="js/car.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <!-- Car model form: Jarlan Perez -->
+            <!-- Police model form: Google -->
+            <!-- Road model: Ian MacGillivray -->
+        </a-assets>
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+
+        <a-obj-model id="road1" src="models/road/model.obj" mtl="models/road/materials.mtl" position="1 -1 -7">
+        </a-obj-model>
+        <a-obj-model id="road2" src="models/road/model.obj" mtl="models/road/materials.mtl" position="1 -1 -3">
+        </a-obj-model>
+        <a-obj-model id="road3" src="models/road/model.obj" mtl="models/road/materials.mtl" position="1 -1 1">
+        </a-obj-model>
+        <a-obj-model id="road4" src="models/road/model.obj" mtl="models/road/materials.mtl" position="1 -1 5">
+        </a-obj-model>
+
+        <a-obj-model id="car" src="models/car/model.obj" mtl="models/car/materials.mtl" position="-0.4 -1.6 -8">
+            <a-animation begin="mouseenter" attribute="position" to="-0.4 -1.6 7" direction="alternate" dur="5000"></a-animation>
+        </a-obj-model>
+
+        <a-obj-model id="police" src="models/police/1396 Police Car.obj" mtl="models/police/1396 Police Car.mtl" position="0.7 -1.8 -6" scale="0.02 0.02 0.02">
+            <a-animation begin="mouseenter" attribute="position" to="0.7 -1.8 7" direction="alternate" dur="3500"></a-animation>
+        </a-obj-model>
+
+        
+        <a-sky  color="#8ae0fc"></a-sky>
+        <!-- <a-plane width="4" height="17" color="black" position="0 -2 0" rotation="-90 0 0"></a-plane> -->
+        <a-plane src="https://i.imgur.com/VqL5ef2.jpg" width="30" height="30" repeat="10 10" color="green" position="0 -2.1 0" rotation="-90 0 0"></a-plane>
+    </a-scene>
+</body>
+</html>
