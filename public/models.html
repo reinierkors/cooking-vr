@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Models</title>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+</head>
+
+<body>
+<a-scene>
+    <a-assets>
+        <!-- Kitchen model: Jerad Bitner -->
+        <!-- Knife model: S. Paul Michael -->
+        <!-- Cake tin model: Poly by Google -->
+    </a-assets>
+    <a-camera id="camera" position="1 0.3 -1">
+        <a-cursor>
+            <a-obj-model id="cookedchicken" visible="false" scale="2 2 2" src="./models/cookedchicken/model.obj" mtl="./models/cookedchicken/materials.mtl"></a-obj-model>
+        </a-cursor>
+    </a-camera>
+
+
+    <a-obj-model src="models/salt/model.obj" mtl="models/salt/materials.mtl"></a-obj-model>
+
+
+    <a-plane width="16" height="16" color="white" position="0 -2.1 -2" rotation="-90 0 0"></a-plane>
+
+    <a-sky color="skyblue"></a-sky>
+
+</a-scene>
+</body>
+
+</html>

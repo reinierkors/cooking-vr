@@ -549,7 +549,7 @@
         </geometry>
     </library_geometries>
     <library_materials>
-        <material id="ID5" name="UT8fBEAXDpXXXagOFbXo">
+        <material id="ID5" name="UT8fBEAXDpXXXagOFbXo_raw">
             <instance_effect url="#ID6" />
         </material>
         <material id="ID19" name="Asphalt_New">
@@ -643,7 +643,7 @@
     </library_effects>
     <library_images>
         <image id="ID7">
-            <init_from>model/UT8fBEAXDpXXXagOFbXo.jpg</init_from>
+            <init_from>model/UT8fBEAXDpXXXagOFbXo_raw.jpg</init_from>
         </image>
         <image id="ID21">
             <init_from>model/Asphalt_New.jpg</init_from>
