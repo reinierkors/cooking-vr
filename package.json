@@ -1,0 +1,19 @@
+{
+  "name": "cooking-vr",
+  "version": "1.0.0",
+  "description": "Teaching students on how to cook certain recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reinierkors/cooking-vr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reinierkors/cooking-vr/issues"
+  },
+  "homepage": "https://github.com/reinierkors/cooking-vr#readme"
+}
