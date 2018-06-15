@@ -7,3 +7,6 @@ https://www.jamieoliver.com/recipes/turkey-recipes/jamie-s-christmas-turkey/
 Credits models:
 Salt Shaker - Jarlan Perez
 Carrot - Google
+Onion - Estella Tse
+
+Christmas Tree - Alex ‘SAFFY’ Safayan
