@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kitchen</title>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="js/cookingvr.js"></script>
+</head>
+
+<body>
+    <a-scene light="defaultLightsEnabled: false">
+        <a-assets timeout="10000">
+            <audio id="bingSound" src="./bing.mp3"></audio>
+            <a-obj-model id="rawChickenlegModel" src="./models/rawchickenleg/chicken.obj"></a-obj-model>
+            <a-collada-model id="rawChickenModel" src="./models/rawchicken/model.dae"></a-collada-model>
+            <a-obj-model id="huntingKnife" src="./models/knife/hunting knife.obj"></a-obj-model>
+            <a-obj-model id="cookedChickenModel" src="./models/cookedchicken/model.obj"></a-obj-model>
+            <a-asset-item id="kitchenModel" src="./models/kitchen3/model2.dae"></a-asset-item>
+            <!-- <a-obj-model id="kitchenModel" src="./models/kitchen3/model2.obj"></a-obj-model> -->
+            <!-- <a-obj-model id="whiteboardModel" src="./models/whiteboard/Whiteboard.obj"></a-obj-model> -->
+            <a-asset-item id="whiteboardModel" src="./models/whiteboard/WhiteBoard_01.gltf"></a-asset-item>
+            <a-asset-item id="windowModel" src="./models/window/CHAHIN_WINDOW.gltf"></a-asset-item>
+            <a-asset-item id="doorModel" src="./models/door/Door 2.gltf"></a-asset-item>
+            <img id="walltexture" src="./textures/wood1.jpg">
+            <img id="floortexture" src="./textures/floor2.jpg">
+            <!-- Kitchen model: Jerad Bitner -->
+            <!-- Knife model: S. Paul Michael -->
+            <!-- Cake tin model: Poly by Google -->
+            <!-- Whiteboard model: Poly by Google -->
+        </a-assets>
+
+        <!-- Default lighting injected by A-Frame. -->
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.4" position="-0.5 6 -2"></a-entity>
+
+        <a-camera id="camera" position="-0.41618227475190117 0.3 -2.784609469960596">
+            <a-cursor>
+                <a-obj-model id="cookedchicken" visible="false" scale="2 2 2" src="#cookedChickenModel" mtl="./models/cookedchicken/materials.mtl"></a-obj-model>
+            </a-cursor>
+        </a-camera>
+        <a-box id="oven" sound="src: ./oven.mp3" opacity="1" color="#888888" position="1.3692334972077824 -1.8313405548230128 -4" rotation="0 -26.93 0" geometry="height:1.6300000000000001;width:1.28"></a-box>
+
+        <!-- Muren -->
+        <a-box id="muur1" color="white" src="#walltexture" material="color:#ffffff" geometry="depth:11.43;height:5.94;width:0.39" rotation="0 62.99 0" position="3.1172171174994405 0.583 -4.351565732888094"></a-box>
+        <a-box id="muur2" color="white" src="#walltexture" material="color:#ffffff" geometry="depth:9.96;height:5.72;width:0.18" rotation="0 -25.03 0" position="5.938418264001282 0.6839180047077899 2.8369028653269988"></a-box>
+        <a-box id="muur3" color="white" src="#walltexture" material="color:#ffffff" geometry="depth:11.07;height:5.72;width:0.06" rotation="0 -116.72000000000001 0" position="-1.1136722215151618 0.6839180047077899 4.768378539845159"></a-box>
+        <a-box id="muur4" color="white" src="#walltexture" material="color:#ffffff" geometry="depth:10.23;height:5.72;width:0.24" rotation="0 -25.03 0" position="-3.694494033171842 0.671 -2.269584640392709"></a-box>
+        
+        <!--  Window -->
+        <a-gltf-model src="#windowModel" rotation="0 -25.03 0" position="6.7484382121675575 1.2723351630791262 0.9125882074835803" scale="1.1 1.1 1.1"></a-gltf-model>
+        <a-gltf-model src="#windowModel" rotation="0 -25.03 0" position="5.248667436625942 1.272 3.815168920187533" scale="1.1 1.1 1.1" gltf-model="./models/window/CHAHIN_WINDOW.gltf"></a-gltf-model>
+
+        <!-- Whiteboard -->
+        <a-entity position="-0.9298132735031714 2.0372395499447222 4.355511441894881" text="width:3.5;color:#000000;value:Stap 1: Pak het mes en snij de kip in stukjes;side:double;letterSpacing:1.5" rotation="0 -204.88 0" id="stap1"></a-entity>
+
+        <a-entity position="-1.2667315560997474 1.8323346286208284 4.252625681991028" text="width:4.24;color:#000000;value:Stap 2: Pak de gesneden kip stukjes en season deze;side:double;letterSpacing:1.5;wrapCount:50" rotation="0 -204.88000000000002 0" id="stap2"></a-entity>
+
+        <a-gltf-model src="#whiteboardModel" rotation="0.45 -204.88000000000002 0" position="-1.3966248631120575 -1 4.268733133534222" scale="0.5 0.5 0.5" gltf-model="./models/whiteboard/WhiteBoard_01.gltf"></a-gltf-model>
+
+        <!-- Ingrediënten -->
+
+        <a-obj-model visible="false" id="rawchickenleg" src="#rawChickenlegModel" mtl="./models/rawchickenleg/chicken.mtl" scale="0.02 0.02 0.02" position="-1.166 -0.6553504584995725 -0.198" rotation="0 -25 0"></a-obj-model>
+
+        <a-collada-model id="rawchicken" src="#rawChickenModel" scale="2 2 2" position="-1.5146173212216234 -0.8048566072676866 -0.1976242509585674" rotation="0 -25 0" collada-model="./models/rawchicken/model.dae"></a-collada-model>
+
+        <a-obj-model id="knife" sound="src:./cut.mp3" src="#huntingKnife" mtl="./models/knife/hunting knife.mtl" scale="0.2 0.2 0.2" position="0.9140641154447364 -0.797572635399732 -0.4544016531554823" rotation="-90 86.73637556584335 9.94390919110291e-17" material="" obj-model="" visible="">
+         <a-animation direction="alternate" attribute="rotation" dur="200" repeat="3" to="0 90 0" begin="cut"></a-animation>
+     </a-obj-model>
+
+     <a-collada-model id="kitchen" src="#kitchenModel" scale="3.5 3.5 3.5" rotation="0 -25 0" position="0 -0.45 -3.95149101192041"></a-collada-model>
+     
+    <!-- Vloer -->
+    <a-plane id="vloer" src="#floortexture" width="16" height="16" color="white" position="1.7 -2.1 -0.28000000000000014" rotation="-90 0 0" material="" geometry="width:20.28;height:17.56"></a-plane>
+
+    <!-- Plafond -->
+     <a-plane id="plafond" src="#walltexture" width="16" height="16" color="white" position="1.0899999999999999 3.6699999999999995 -0.28000000000000014" rotation="-90 -27.04 0" material="side:back" geometry="width:13.400000000000002;height:11.669999999999998"></a-plane>
+
+     <!-- Lucht -->
+     <a-sky color="skyblue"></a-sky>
+ </a-scene>
+</body>
+
+</html>
